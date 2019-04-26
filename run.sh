@@ -1,0 +1,1 @@
+FLASK_APP=headlines.py FLASK_DEBUG=1 flask run

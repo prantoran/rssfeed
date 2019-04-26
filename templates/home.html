@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="data:;base64,=">
+
+    <meta charset="UTF-8">
+    <title>{{header}}</title>
+</head>
+<body>
+    <h1>9GAG Feeds</h1>
+    <h2>{{header}}</h2>
+        <h3>Feeds</h3>
+            <form>
+                {% for key, value in rssFeeds.items() %}
+                    <input type="radio" name="tag" value="{{key}}" {% if header == key %}checked="checked"{% endif %}/> {{key}}<br>
+                {% endfor %}<br>
+                <input type="submit" value="Submit" />
+            </form>
+            <br><br>
+            {% for article in articles %}
+                <b><a href="{{article.link}}" target="_blank">{{article.title}}</a></b><br />
+                <br/>
+                {{article.summary|safe}}
+                <hr>
+            {% endfor %}
+</body>
+</html>
