@@ -35,7 +35,7 @@ def get_feed():
         print("init query:", query)
         
         if not query or query not in RSS_FEEDS:
-            query = "ABC Hobart"
+            query = "Funny"
         print("query:", query)
         
         if cache.has(query) == False:
